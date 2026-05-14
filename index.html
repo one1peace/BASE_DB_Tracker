@@ -114,10 +114,22 @@
   .temp-item {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 3px 10px; border-radius: 6px; font-size: 11px;
-    background: #eaf4ea; color: #1e7e34; font-weight: 600;
-    width: fit-content;
+    font-weight: 600; width: fit-content;
   }
-  .temp-item.highlighted { background: #fff3cd; color: #856404; }
+  /* 신규: 강조 초록 실선 */
+  .temp-item.new-rule { background: #1e7e34; color: #ffffff; border: 1.5px solid #1e7e34; }
+  /* 이월: 눈에 안띄는 회색 */
+  .temp-item.carried-rule { background: #f0f0f0; color: #adb5bd; border: 1.5px dashed #ced4da; }
+  .temp-item.highlighted { background: #fff3cd; color: #856404; border: 1.5px solid #856404; }
+
+  /* 범례 */
+  .legend { display: flex; gap: 16px; align-items: center; padding: 0 0 14px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #495057; }
+  .legend-box {
+    display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;
+  }
+  .legend-box.new-rule { background: #1e7e34; color: #ffffff; border: 1.5px solid #1e7e34; }
+  .legend-box.carried-rule { background: #f0f0f0; color: #adb5bd; border: 1.5px dashed #ced4da; }
 
   .content-cell { font-size: 11px; color: #495057; }
   .content-item { padding: 2px 0; }
@@ -407,11 +419,23 @@ function renderTimeline() {
     return;
   }
 
+  // 전체 데이터 기준으로 각 TEMP의 최초 등장 Rev 계산
+  const firstSeen = {};
+  for (const d of allData) {
+    for (const t of d.temps) {
+      if (!firstSeen[t]) firstSeen[t] = d.rev;
+    }
+  }
+
   const rows = filteredData.map(d => {
     const baseHtml = d.bases.map(b => `<span class="base-tag">${b}</span>`).join(' ');
     const tempHtml = d.temps.map((t, i) => {
       const hl = search && t.toLowerCase().includes(search);
-      return `<div class="temp-item${hl ? ' highlighted' : ''}">${t}</div>`;
+      if (hl) return `<div class="temp-item highlighted">${t}</div>`;
+      const isNew = firstSeen[t] === d.rev;
+      const cls = isNew ? 'new-rule' : 'carried-rule';
+      const label = isNew ? '🆕' : '🔄';
+      return `<div class="temp-item ${cls}">${label} ${t}</div>`;
     }).join('');
     const contentHtml = d.contents.map((c, i) => {
       const hl = search && c.toLowerCase().includes(search);
@@ -427,7 +451,14 @@ function renderTimeline() {
     </tr>`;
   }).join('');
 
-  document.getElementById('timelineContainer').innerHTML = `
+  const legend = `
+    <div class="legend">
+      <span style="font-size:11px;font-weight:700;color:#495057;">범례:</span>
+      <div class="legend-item"><span class="legend-box new-rule">🆕 신규</span> 해당 Rev에서 처음 적용</div>
+      <div class="legend-item"><span class="legend-box carried-rule">🔄 이월</span> 이전 Rev에서 가져온 TEMP</div>
+    </div>`;
+
+  document.getElementById('timelineContainer').innerHTML = legend + `
     <table class="timeline-table">
       <thead>
         <tr>
