@@ -2,7 +2,7 @@
 
 > Revision 시점별 TEMP Rule 누적 빌드 & 추적 도구
 
-🔗 **Live Site**: [https://MTO.github.io/temp-rule-tracker](https://MTO.github.io/temp-rule-tracker)
+🔗 **Live Site**: [https://one1peace.github.io/BASE_DB_Tracker]
 
 ---
 
