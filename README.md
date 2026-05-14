@@ -1,6 +1,6 @@
 # 🗂 TEMP Rule Tracker
 
-> Revision 시점별 TEMP Rule 누적 빌드 & 추적 도구
+> BASE DB시점별 TEMP Rule 누적 빌드 & 추적 도구
 
 🔗 **Live Site**: https://one1peace.github.io/BASE_DB_Tracker
 
