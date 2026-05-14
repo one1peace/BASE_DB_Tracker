@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEMP Rule Tracker</title>
+<title>BASE DB Tracker</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #1a1a2e; min-height: 100vh; }
@@ -224,7 +224,7 @@
 
 <header>
   <div>
-    <h1>🗂 TEMP Rule Tracker</h1>
+    <h1>🗂 BASE DB Tracker</h1>
   </div>
   <span>BASE-grouped Cumulative Build</span>
 </header>
@@ -249,7 +249,7 @@ R05&#9;260503&#9;TEMP03_DR+TEMP05_DR&#9;DC max_length 예외+IIP overlap 예외&
         <input class="search-box" id="ruleSearch" type="text" placeholder="Rule ID 또는 내용 검색..." oninput="applyFilters()">
       </div>
       <div class="filter-section">
-        <h4>📌 Rev 필터</h4>
+        <h4>📌 Library 필터</h4>
         <div class="chip-group" id="revChips"></div>
       </div>
       <div class="filter-section">
@@ -262,7 +262,7 @@ R05&#9;260503&#9;TEMP03_DR+TEMP05_DR&#9;DC max_length 예외+IIP overlap 예외&
   <!-- RIGHT -->
   <div class="right">
     <div class="tabs">
-      <div class="tab active" onclick="switchTab('timeline', this)">📅 Rev 타임라인</div>
+      <div class="tab active" onclick="switchTab('timeline', this)">📅 BASE DB 타임라인</div>
       <div class="tab" onclick="switchTab('tracker', this)">🔎 Rule 추적</div>
       <div class="tab" onclick="switchTab('build', this)">⚙️ 누적 빌드</div>
     </div>
