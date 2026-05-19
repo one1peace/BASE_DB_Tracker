@@ -76,4 +76,4 @@ temp-rule-tracker/
 
 ## 📄 License
 
-MIT License — 자유롭게 사용, 수정, 배포 가능
+MIT License — 업데이트 요청 시 문의 (MTO 엄범진)
