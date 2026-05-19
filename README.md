@@ -1,8 +1,11 @@
 # 🗂 BASE DB Tracker
 
 > BASE DB시점별 DATA 누적 빌드 & 추적 도구
----
-> DATA종류: ①TEMP Rule ②TT ③9cell ④Stream
+> DATA종류
+- ①TEMP Rule
+- ②TT
+- ③9cell
+- ④Stream
 
 **Live Site**: https://one1peace.github.io/BASE_DB_Tracker
 
