@@ -29,8 +29,9 @@ Base DB가 Revision마다 달라지는 환경에서, **시점별 DATA 누적 이
 | 📅 Rev 타임라인 | Rev별 BASE / TEMP 적용 현황 테이블 |
 | 🔎 Rule 추적 | 특정 TEMP rule이 어떤 Rev에 걸쳐 적용됐는지 시각적 타임라인 |
 | ⚙️ 누적 빌드 | 선택한 Rev 시점까지 BASE가 같은 Rev의 rule을 자동 누적 |
-| 🛠 T/T | 추후 update 예정
-| 🛠 9cell | 추후 update 예정
+| 🛠 T/T | ．．．추후 update 예정 ．．．
+| 🛠 9cell | ．．．추후 update 예정 ．．．
+
 ---
 
 ## 📋 데이터 형식
