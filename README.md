@@ -1,14 +1,14 @@
 # 🗂 TEMP Rule Tracker
 
-> BASE DB시점별 TEMP Rule 누적 빌드 & 추적 도구
+> BASE DB시점별 DATA(TEMP Rule,Truth table,Stream) 누적 빌드 & 추적 도구
 
-🔗 **Live Site**: https://one1peace.github.io/BASE_DB_Tracker
+**Live Site**: https://one1peace.github.io/BASE_DB_Tracker
 
 ---
 
 ## 📌 개요
 
-Base DB가 Revision마다 달라지는 환경에서, **시점별 TEMP Rule의 누적 이력을 관리**하기 위한 웹 도구입니다.
+Base DB가 Revision마다 달라지는 환경에서, **시점별 DATA 누적 이력을 관리**하기 위한 웹 도구입니다.
 
 - Excel history 데이터를 붙여넣기만 하면 즉시 사용 가능
 - 서버 불필요 — 순수 HTML 단일 파일
