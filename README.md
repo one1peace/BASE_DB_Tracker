@@ -1,6 +1,6 @@
 # 🗂 BASE DB Tracker
 
-> BASE DB시점별 DATA 누적 빌드 & 추적 도구
+> DB시점별 DATA의 통합관리 가능한 추적도구 & 누적 빌드 탐색기
 ---
 > DATA종류
 - ① TEMP Rule
