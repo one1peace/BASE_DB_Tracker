@@ -1,6 +1,7 @@
 # 🗂 BASE DB Tracker
 
 > BASE DB시점별 DATA 누적 빌드 & 추적 도구
+---
 > DATA종류
 - ①TEMP Rule
 - ②TT
